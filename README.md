@@ -177,3 +177,14 @@ Im Ordner `utilitis` finden sich Mixins, die in Komponenten eingesetzt werden k√
 * _grid.css.sass
 * _responsify.css.sass
 * ‚Ä¶
+
+## Selector Best Practices
+
+* [Customizing Components](customizing-components.md)
+* [Selector Intent](http://cssguidelin.es/#selector-intent)
+* [Portability](http://cssguidelin.es/#portability)
+* [Specificity](http://cssguidelin.es/#specificity)
+
+## Style Guides
+* [Haml Style Guide](haml-style-guide.md)
+* [Sass Style Guide](sass-style-guide.md)
