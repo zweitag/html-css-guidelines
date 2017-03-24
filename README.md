@@ -89,9 +89,9 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
     <td>
       <pre lang="sass">
       .fact-list
-        line-height: 1.2
-      .fact-list__entry
         list-style-type: disc
+      .fact-list__entry
+        list-style-type: discline-height: 1.2
       .fact-list__entry--highlighted
         font-weight: bold
       </pre>
@@ -99,9 +99,9 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
     <td>
       <pre lang="sass">
       .fact-list
-        line-height: 1.2
-      .fact-list--entry
         list-style-type: disc
+      .fact-list--entry
+        line-height: 1.2
         &.highlighted
           font-weight: bold
       </pre>
@@ -127,27 +127,27 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
     %h1.headline.xl Musterprodukt
 ```
 
-#### assets/stylesheets/generic-components/_headline.sass
+#### assets/stylesheets/generic-components/_headline.css.sass
 ```sass
 .headline
-  +serif-font
+  +font-serif
   &.xl
-    font-size: 32px
+    +text-copy(xl)
  ```
 
-#### assets/stylesheets/generic-components/_media-list.sass
+#### assets/stylesheets/generic-components/_media-list.css.sass
 ```sass
 .media-list
   margin-bottom: 20px
   
 .media-list--item
-  list-style-type: none
+  width: 100%
   
 .media-list--image
   display: block
  ```
  
- #### assets/stylesheets/specific-components/_product.sass
+ #### assets/stylesheets/specific-components/_product.css.sass
 ```sass
 .product
   background-color: $color-product-background
@@ -158,3 +158,22 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
 .product--information
   +column(8)
  ```
+
+## Globales und Hilfsmittel
+### Globales
+Im Order `globals` finden sich globale Basisstile und Konfigurationen:
+
+* _base.css.sass: Styling der HTML-Elemente (z.B. `strong {font-weight: 700}`)
+* _colors.css.sass: Farbdeklarationen (z. B. `$color-accent: $curious-blue`)
+* _reset.css.sass: Standard-Reset der HTML-Elemente (z.B. `ol, ul {list-style: none}`}
+* _typography.css.sass: Font-Stack-Deklarationen und Text-Mixins (z.B. `@mixin font-serif {font-family: $font-stack-serif}`
+* …
+
+### Hilfsmittel
+Im Ordner `utilitis` finden sich Mixins, die in Komponenten eingesetzt werden können:
+
+* _clearfix.css.sass
+* _font-smoothing.css.sass
+* _grid.css.sass
+* _responsify.css.sass
+* …
