@@ -8,7 +8,6 @@ Wir organisieren unseren Stylesheet-Ordner wie folgt:
 
 * generic-components
 * specific-components
-* abstract-components
 * globals
 * utilities
 
@@ -109,3 +108,53 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
     </td>
   </tr>
 </table>
+
+* Der Komponenten-Namensraum wird also mit `--` vom Elementnamen abgegrenzt.
+* Modifier kommen ohne Namensraum aus, da sie ausschließlich in Kombination mit einer Komponente bzw. einem Element eingesetzt werden
+
+### Beispiel
+#### views/products/show.html.haml
+``` haml
+.product
+  %aside.product--images
+    %ul.media-list
+      %li.media-list--item
+        %img.media-list--image{…}
+      %li.media-list--item
+        %img.media-list--image{…}
+      
+  .product--information
+    %h1.headline.xl Musterprodukt
+```
+
+#### assets/stylesheets/generic-components/_headline.sass
+```sass
+.headline
+  +serif-font
+  &.xl
+    font-size: 32px
+ ```
+
+#### assets/stylesheets/generic-components/_media-list.sass
+```sass
+.media-list
+  margin-bottom: 20px
+  
+.media-list--item
+  list-style-type: none
+  
+.media-list--image
+  display: block
+ ```
+ 
+ #### assets/stylesheets/specific-components/_product.sass
+```sass
+.product
+  background-color: $color-product-background
+  
+.product--images
+  +column(4)
+  
+.product--information
+  +column(8)
+ ```
