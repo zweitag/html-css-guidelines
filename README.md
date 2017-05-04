@@ -53,6 +53,20 @@ Frontend-Komponenten, die für einen bestimmen Anwendungsfall geschaffen werden 
 * ist i.d.R. spezifisch für die Anwendung
 * ist ein Nomen, ggf. mit Adjektiv davor
 
+### Modifier
+
+Varianten und Status einer Komponente werden mit Modifier abgebildet. Sie treten immer nur in direkter Verbindung mit einer Komponente auf.
+
+#### Beispiele
+
+`.button.primary`, `.text-link.unobtrusive`, `.product-list--entry.sold-out`, `.button.primary.disabled`
+
+#### Eigenschaften des Namens
+
+* beschreibt einen Zustand oder besonderes Verhalten einer Komponenteninstanz, wodurch eine Variante entsteht
+* ist idealerweise ein einfaches Adjektiv
+* steht nie alleine, sondern ist nur in Verbindung mit der Komponente eindeutig
+
 ### Block, Element, Modifier (BEM)
 
 Die Unterscheidung von generischen und spezifischen Komponenten ist der wichtigste Unterschied zu BEM.
