@@ -8,6 +8,7 @@ Wir organisieren unseren Stylesheet-Ordner wie folgt:
 
 * generic-components
 * specific-components
+* abstract-components
 * globals
 * utilities
 
@@ -44,13 +45,33 @@ Frontend-Komponenten, die für einen bestimmen Anwendungsfall geschaffen werden 
 #### Vorteile
 
 * simpler zu schreiben, da nicht auf Wiederverwendung ausgelegt
-* simpler zu warten, da es nur 1 Instanz der Komponente geben kann
+* simpler zu warten, da es nur eine Instanz der Komponente geben kann
 * darf spezifische Details wie Layoutinformationen enthalten
 
 #### Eigenschaften des Namens
 
 * beschreibt eindeutig einen konkreten Inhalt
 * ist i.d.R. spezifisch für die Anwendung
+* ist ein Nomen, ggf. mit Adjektiv davor
+
+### Abstrakte Komponenten
+
+Immer dann, wenn sich mehrere Komponenten Aussehen oder Verhalten teilen, extrahieren wir den Sass-Code und machen daraus eine abstrakte Komponente. Der Unterschied zu den generischen und spezifischen Komponenten liegt darin, dass abstrakte Komponenten keinen Klassennamen bekommen sondern lediglich als Mixin existieren.
+
+#### Beispiele
+
+`=boundary-box`, `=gradient-overlay`, `=basic-transition`
+
+#### Vorteile
+
+* DRY
+* besser zu warten, da der Code zentral angepasst werden kann
+* Konsistenz des UIs
+
+#### Eigenschaften des Namens
+
+* beschreibt eindeutig einen konkreten Inhalt oder eine konkrete Funktion
+* ist i.d.R. nicht spezifisch für die Anwendung
 * ist ein Nomen, ggf. mit Adjektiv davor
 
 ### Modifier
@@ -127,7 +148,9 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
 * Modifier kommen ohne Namensraum aus, da sie ausschließlich in Kombination mit einer Komponente bzw. einem Element eingesetzt werden
 
 ### Beispiel
+
 #### views/products/show.html.haml
+
 ``` haml
 .product
   %aside.product--images
@@ -142,6 +165,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
 ```
 
 #### assets/stylesheets/generic-components/_headline.css.sass
+
 ```sass
 .headline
   +font-serif
@@ -150,6 +174,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
  ```
 
 #### assets/stylesheets/generic-components/_media-list.css.sass
+
 ```sass
 .media-list
   margin-bottom: 20px
@@ -174,16 +199,19 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
  ```
 
 ## Globales und Hilfsmittel
+
 ### Globales
+
 Im Order `globals` finden sich globale Basisstile und Konfigurationen:
 
 * _base.css.sass: Styling der HTML-Elemente (z.B. `strong {font-weight: 700}`)
-* _colors.css.sass: Farbdeklarationen (z. B. `$color-accent: $curious-blue`)
+* _colors.css.sass: Farbdeklarationen (z.B. `$color-accent: $curious-blue`)
 * _reset.css.sass: Standard-Reset der HTML-Elemente (z.B. `ol, ul {list-style: none}`}
 * _typography.css.sass: Font-Stack-Deklarationen und Text-Mixins (z.B. `@mixin font-serif {font-family: $font-stack-serif}`
 * …
 
 ### Hilfsmittel
+
 Im Ordner `utilitis` finden sich Mixins, die in Komponenten eingesetzt werden können:
 
 * _clearfix.css.sass
@@ -200,5 +228,6 @@ Im Ordner `utilitis` finden sich Mixins, die in Komponenten eingesetzt werden k�
 * [Specificity](http://cssguidelin.es/#specificity)
 
 ## Style Guides
+
 * [Haml Style Guide](haml-style-guide.md)
 * [Sass Style Guide](sass-style-guide.md)
