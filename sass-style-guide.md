@@ -233,7 +233,7 @@ Der Nachfahrenselektor ist der teuerste Selektor in CSS. Gib dem entsprechenden 
 
 ### Vermeide den selben Selektor fürs Styling (CSS) und fürs Verhalten (JS) zu verwenden
 
-Separation of concerns. Wenn du den Klassennamen fürs Styling später nochmal änderst, bleibt dein Javascript nachwievor in Takt.
+Separation of concerns. Möchte man Javascript auf ein Element anwenden, hat es sich etabliert, hierfür ein `data-*`Attribut zu nutzen. Der Vorteil: Ändert man später nochmal das Klassenattribut, bleibt das Javascript weiterhin in Takt.
 
 **schlecht**
 
@@ -247,16 +247,8 @@ $('.dialog-opener')
 
 **gut**
 
-Benutze ein `data`-Attribut:
-
 ``` js
-$('[data-dialog-opener]')
-```
-
-Oder benutze eine ID:
-
-``` js
-$('#dialog-opener')
+$("[data-role='dialog-opener']")
 ```
 
 ## Coding Konventionen
