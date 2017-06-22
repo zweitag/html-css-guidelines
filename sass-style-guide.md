@@ -263,7 +263,7 @@ $('#dialog-opener')
 
 ### Benutze die Kurzschreibweise
 
-Einfach weil es kürzer und einfacher zu lesen ist.
+Wenn man alle Werte einer Eigenschaft auf einmal angibt, ist die Kurzschreibweise schneller zu erfassen und spart obendrein ein paar Bytes ein.
 
 **schlecht**
 
