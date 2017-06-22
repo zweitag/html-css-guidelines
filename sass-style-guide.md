@@ -6,7 +6,10 @@
 - [Manifest-Datei](#manifest-datei)
 - [Style-Definitionen](#style-definitionen)
 - [Syntax und Formatierung](#syntax-und-formatierung)
+- [Selektorregeln](#selektorregeln)
+- [Coding Konventionen](#coding-konventionen)
 - [Kommentare](#kommentare)
+- [Linting](#linting)
 - [EditorConfig](#editorconfig)
 
 ## Einleitung
@@ -140,9 +143,9 @@ Um nicht ständig nach einer CSS-Eigenschaft suchen zu müssen, verwenden wir ei
 
 - z.B. cursor, pointer-events, transition
 
-### Coding Konventionen
+## Selektorregeln
 
-#### Vermeide zu generische Selektoren
+### Vermeide zu generische Selektoren
 
 In 99% der Fälle wird man generische Selektoren überschreiben (müssen), was zu mehr Code und einem erhöhtem Wartungsaufwand führt. Darum sei spezifischer und benutze stattdessen besser eine Klasse. (Ausnahme: CSS-Resetstyles)
 
@@ -172,7 +175,7 @@ ul
   list-style-type: circle
 ```
 
-#### Vermeide Elementselektoren
+### Vermeide Elementselektoren
 
 Elementselektoren sind schlecht (siehe Regel darüber) und erhöhen die Spezifität unnötigerweise. Auch hier sollte auf eine Klasse zurückgegriffen werden. Außerdem sollten Elemente wie `<div>` und `<span>` im Markup immer ein Klassenattribut besitzen. Andernfalls wären sie sowieso überflüssig.
 
@@ -192,7 +195,7 @@ Elementselektoren sind schlecht (siehe Regel darüber) und erhöhen die Spezifit
 .navigation--list
 ```
 
-#### Vermeide eine Überspezifizierung durch Elementselektoren
+### Vermeide eine Überspezifizierung durch Elementselektoren
 
 Eine Überspezifizierung durch Elementselektoren hat zur Folge, dass der CSS-Code ans Markup gekoppelt wird. Würde man das Element im Markup ändern, z.B. aus einer `h2` eine `h3` machen, müsste man dies auch im Stylesheet tun, was einen erhöhten Wartungsaufwand nach sich zieht. Obendrein wird die Spezifität unnötigerweise erhöht.
 
@@ -212,7 +215,7 @@ a.back
 .back
 ```
 
-#### Vermeide Nachfahrenselektoren
+### Vermeide Nachfahrenselektoren
 
 Der Nachfahrenselektor ist der teuerste Selektor in CSS. Gib dem entsprechenden Element besser eine Klasse und style es direkt.
 
@@ -228,7 +231,7 @@ Der Nachfahrenselektor ist der teuerste Selektor in CSS. Gib dem entsprechenden 
 .link-list--link
 ```
 
-#### Vermeide den selben Selektor fürs Styling (CSS) und fürs Verhalten (JS) zu verwenden
+### Vermeide den selben Selektor fürs Styling (CSS) und fürs Verhalten (JS) zu verwenden
 
 Separation of concerns. Wenn du den Klassennamen fürs Styling später nochmal änderst, bleibt dein Javascript nachwievor in Takt.
 
@@ -256,7 +259,9 @@ Oder benutze eine ID:
 $('#dialog-opener')
 ```
 
-#### Benutze die Kurzschreibweise
+## Coding Konventionen
+
+### Benutze die Kurzschreibweise
 
 Einfach weil es kürzer und einfacher zu lesen ist.
 
@@ -277,7 +282,7 @@ Einfach weil es kürzer und einfacher zu lesen ist.
   padding: 0 10px 20px
 ```
 
-#### Gib nur die Werte an, die du auch setzen willst
+### Gib nur die Werte an, die du auch setzen willst
 
 Wenn man zu viele Werte auf einmal angibt, könnte es sein, dass man versehentlich einen vererbten Wert überschreibt. Außerdem muss man diesen Wert dann u.U. später nochmal überschreiben, weil er sich wiederum selbst weitervererbt hat.
 
@@ -297,7 +302,7 @@ Wenn man zu viele Werte auf einmal angibt, könnte es sein, dass man versehentli
   background-color: rgba(0, 0, 0, 0.5)
 ```
 
-#### Vermeide die Einheitsangabe nach dem Wert "0"
+### Vermeide die Einheitsangabe nach dem Wert "0"
 
 Null ist Null. :)
 
@@ -322,7 +327,7 @@ Null ist Null. :)
   transform: rotate(0deg)
 ```
 
-#### Nutze 100–900 bei der Angabe der Schriftdicke
+### Nutze 100–900 bei der Angabe der Schriftdicke
 
 Die Zahlen 100, 200 … 900 sind typografischer Standard. Außerdem sind sie kürzer und sparen ein paar Bits ein. ;)
 
@@ -339,10 +344,6 @@ Die Zahlen 100, 200 … 900 sind typografischer Standard. Außerdem sind sie kü
 .box
   font-weight: 700
 ```
-
-### Linting
-
-Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Der Linter sollte am Ende keine Fehler oder Warnungen ausspucken.
 
 ## Kommentare
 
@@ -376,6 +377,10 @@ Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Komment
   .box
     margin-top: 5px
 ```
+
+## Linting
+
+Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Der Linter sollte am Ende keine Fehler oder Warnungen ausspucken.
 
 ## Editorconfig
 
