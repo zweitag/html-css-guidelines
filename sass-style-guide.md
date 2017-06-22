@@ -175,9 +175,9 @@ ul
   list-style-type: circle
 ```
 
-### Vermeide Elementselektoren
+### Vermeide Basiselementselektoren
 
-Elementselektoren sind schlecht (siehe Regel darüber) und erhöhen die Spezifität unnötigerweise. Auch hier sollte auf eine Klasse zurückgegriffen werden. Außerdem sollten Elemente wie `<div>` und `<span>` im Markup immer ein Klassenattribut besitzen. Andernfalls wären sie sowieso überflüssig.
+Basiselementselektoren sind schlecht (siehe Regel darüber) und erhöhen die Spezifität unnötigerweise. Auch hier sollte auf eine Klasse zurückgegriffen werden. Außerdem sollten Elemente wie `<div>` und `<span>` im Markup immer ein Klassenattribut besitzen. Andernfalls wären sie sowieso überflüssig.
 
 **schlecht**
 
@@ -195,9 +195,9 @@ Elementselektoren sind schlecht (siehe Regel darüber) und erhöhen die Spezifit
 .navigation--list
 ```
 
-### Vermeide eine Überspezifizierung durch Elementselektoren
+### Vermeide eine Überspezifizierung durch Basiselementselektoren
 
-Eine Überspezifizierung durch Elementselektoren hat zur Folge, dass der CSS-Code ans Markup gekoppelt wird. Würde man das Element im Markup ändern, z.B. aus einer `h2` eine `h3` machen, müsste man dies auch im Stylesheet tun, was einen erhöhten Wartungsaufwand nach sich zieht. Obendrein wird die Spezifität unnötigerweise erhöht.
+Eine Überspezifizierung durch Basiselementselektoren hat zur Folge, dass der CSS-Code ans Markup gekoppelt wird. Würde man das Element im Markup ändern, z.B. aus einer `h2` eine `h3` machen, müsste man dies auch im Stylesheet tun, was einen erhöhten Wartungsaufwand nach sich zieht. Obendrein wird die Spezifität unnötigerweise erhöht.
 
 **schlecht**
 
