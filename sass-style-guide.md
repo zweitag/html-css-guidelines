@@ -382,7 +382,7 @@ Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Komment
 
 Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Der Linter sollte am Ende keine Fehler oder Warnungen ausspucken.
 
-## Editorconfig
+## EditorConfig
 
 Um unschöne Diffs zu vermeiden, sollte man sich seinen Editor folgendermaßen einrichten:
 
