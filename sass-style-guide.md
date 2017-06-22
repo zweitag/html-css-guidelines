@@ -93,7 +93,7 @@ Die Basis eines gemeinsam gelebten Stils ist ein grundlegendes Set an Syntax- un
 
 - Einrückung: zwei Leerzeichen, keine Tabs
 - Multi-Line-Stil: Ein Selektor pro Zeile, eine Deklaration pro Zeile
-- Selektorverschachtelung: maximal drei Ebenen tief
+- Selektorverschachtelung: maximal drei Ebenen tief, nach Möglichkeit jedoch vermeiden und eine eigene Klasse für Elemente einer Komponente einführen
 - Alle Bezeichnungen werden auf englisch und klein geschrieben. Setzt man mehrere Wörter zu einem Selektor zusammen, trennt diese ein Bindestrich: `.data-table`.
 - Wir verwenden einfache Anführungszeichen: `font-family: 'Andale Mono'`.
 - Werte in Attributselektoren werden in Anführungszeichen gesetzt: `input[type='checkbox']`.
