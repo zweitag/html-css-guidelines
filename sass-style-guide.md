@@ -75,13 +75,13 @@ Verschachtelungen innerhalb eines Elements beginnen mit Pseudoklassen, gefolgt v
     border-color: $color-border-loud
   &::before
     content: '*'
-  &.highlight
+  &.highlighted
     bacground-color: $color-background-loud
 
-.main-navigation--item
+.main-navigation--link
   display: block
   padding: 5px 0
-  .highlight > &
+  .highlighted > &
     color: $color-text-inverted
 ```
 
