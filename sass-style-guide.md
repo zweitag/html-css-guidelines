@@ -2,12 +2,12 @@
 
 ## Inhaltsverzeichnis
 
-- Einleitung
-- Manifest-Datei
-- Style-Definitionen
-- Syntax und Formatierung
-- Kommentare
-- Editorconfig
+- [Einleitung](#einleitung)
+- [Manifest-Datei](#manifest-datei)
+- [Style-Definitionen](#style-definitionen)
+- [Syntax und Formatierung](#syntax-und-formatierung)
+- [Kommentare](#kommentare)
+- [EditorConfig](#editorconfig)
 
 ## Einleitung
 
