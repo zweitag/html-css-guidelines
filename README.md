@@ -58,9 +58,21 @@ Frontend-Komponenten, die für einen bestimmen Anwendungsfall geschaffen werden 
 
 Immer dann, wenn sich mehrere Komponenten Aussehen oder Verhalten teilen, extrahieren wir den Sass-Code und machen daraus eine abstrakte Komponente. Der Unterschied zu den generischen und spezifischen Komponenten liegt darin, dass abstrakte Komponenten keinen Klassennamen bekommen sondern lediglich als Mixin existieren.
 
-#### Beispiele
+#### Beispiel
 
-`=boundary-box`, `=gradient-overlay`, `=basic-transition`
+``` sass
+=boundary-box($padding: true)
+  width: 100%
+  max-width: $layout-width
+  margin: 0 auto
+  @if $padding == true
+    +respond-to(large)
+      padding: 0 $space-l
+    +respond-to(medium)
+      padding: 0 $space-m
+    +respond-to(small)
+      padding: 0 $space-s
+```
 
 #### Vorteile
 
