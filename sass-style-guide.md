@@ -351,7 +351,7 @@ Da man bei CSS nicht immer sofort sieht, warum eine Deklaration eingesetzt wird,
 
 Möchte man eine einzelne Zeile in einem Block kommentieren, so setzt man den Kommentar ans Ende der Deklaration:
 
-```
+``` sass
 .box
   position: absolute
   top: -12px // Fallback if JS fails to load
@@ -359,7 +359,7 @@ Möchte man eine einzelne Zeile in einem Block kommentieren, so setzt man den Ko
 
 Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Kommentar direkt darüber:
 
-```
+``` sass
 // Global Styles
 .box
   position: relative
