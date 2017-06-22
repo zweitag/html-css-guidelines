@@ -11,7 +11,7 @@
 
 ## Einleitung
 
-Bei der Arbeit an großen, langlebigen Projekten mit mehreren Entwicklern unterschiedlicher Fähigkeiten ist es wichtig, dass wir alle einheitlich arbeiten. Unsere oberste Prämisse sollte sein, dass unsere Stylesheets auf der einen Seite leicht pflegbar und skalierbar sind und auf der anderen Seite unser Code aber transparent und lesbar bleibt. Um dies zu erfüllen, helfen folgende Empfehlungen.
+Bei der Arbeit an großen, langlebigen Projekten mit mehreren Entwicklern ist es wichtig, dass wir alle einheitlich arbeiten. Unsere oberste Prämisse sollte sein, dass unsere Stylesheets auf der einen Seite leicht pflegbar und skalierbar sind und auf der anderen Seite unser Code transparent und lesbar bleibt. Um dies zu erfüllen, helfen folgende Empfehlungen.
 
 ## Manifest-Datei
 
