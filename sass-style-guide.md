@@ -329,7 +329,7 @@ Null ist Null. :)
 
 ### Nutze 100–900 bei der Angabe der Schriftdicke
 
-Die Zahlen 100, 200 … 900 sind typografischer Standard. Außerdem sind sie kürzer und sparen ein paar Bits ein. ;)
+Die Zahlen 100, 200 … 900 sind typografischer Standard und erlauben es uns, differenzierter mit Abstufungen der Schriftdicke umzugehen als es _normal_ und _bold_ tun.
 
 **schlecht**
 
