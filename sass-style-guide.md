@@ -87,7 +87,7 @@ Verschachtelungen innerhalb eines Elements beginnen mit Pseudoklassen, gefolgt v
 
 ## Syntax und Formatierung
 
-Eine der einfachsten Formen eines Styleguides ist ein Set von Regeln bezüglich Syntax und Formatierung zu definieren, so dass alle Entwickler eine gemeinsame Basis haben und der Code gut zu lesen ist.
+Die Basis eines gemeinsam gelebten Stils ist ein grundlegendes Set an Syntax- und Formatierungsregeln. Eine strikte Einhaltung bringt Effizienzpotenziale, weil man Code schneller lesen, verstehen und abgleichen kann. Es ist weniger wahrscheinlich, dass man Dinge übersieht oder missversteht und niemand verbringt Zeit damit, seinen Arbeitsbereich durch Umformatierungen »für sich einzurichten«.
 
 ### Schreibweise
 
