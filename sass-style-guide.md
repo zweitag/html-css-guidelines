@@ -106,7 +106,7 @@ Die Basis eines gemeinsam gelebten Stils ist ein grundlegendes Set an Syntax- un
 
 ### Deklarationsreihenfolge
 
-Um nicht ständig nach einer CSS-Eigenschaft suchen zu müssen, verwenden wir eine feste Deklarationsreihenfolge. Sie ist in logische Blöcke gegliedert, die man sich im Detail in der Linter-Config (TODO: verlinken) ansehen kann.
+Um nicht ständig nach einer CSS-Eigenschaft suchen zu müssen, verwenden wir eine feste Deklarationsreihenfolge. Sie ist in logische Blöcke gegliedert, die man sich im Detail in der [Linter-Config](https://github.com/zweitag/rails-project-template/pull/57) ansehen kann.
 
 #### 1. Übergeordnetes
 
