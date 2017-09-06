@@ -79,7 +79,7 @@ Verschachtelungen innerhalb eines Elements beginnen mit Pseudoklassen, gefolgt v
   &::before
     content: '*'
   &.highlighted
-    bacground-color: $color-background-loud
+    background-color: $color-background-loud
 
 .main-navigation--link
   display: block
