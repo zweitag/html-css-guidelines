@@ -98,7 +98,7 @@ Varianten und Status einer Komponente werden mit Modifier abgebildet. Sie treten
 
 * beschreibt einen Zustand oder besonderes Verhalten einer Komponenteninstanz, wodurch eine Variante entsteht
 * ist idealerweise ein einfaches Adjektiv
-* steht nie alleine, sondern ist nur in Verbindung mit der Komponente eindeutig
+* steht nie alleine, sondern ist nur in Verbindung mit der Komponente eindeutig ([Warum?](https://github.com/zweitag/html-css-guidelines/pull/2#discussion_r123475470))
 
 ### Block, Element, Modifier (BEM)
 
