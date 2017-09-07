@@ -372,7 +372,7 @@ Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Komment
 
 ## Linting
 
-Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Der Linter sollte am Ende keine Fehler oder Warnungen ausspucken. Alle Regeln findet man in der [Linter-Config](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml).
+Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Die Dokumention der Regeln findet ihr [hier](https://github.com/sasstools/sass-lint/tree/master/docs/rules). Der Linter sollte am Ende keine Fehler oder Warnungen ausspucken. Unsere Regeln findet man in der [Linter-Config](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml).
 
 ## EditorConfig
 
