@@ -106,7 +106,7 @@ Die Basis eines gemeinsam gelebten Stils ist ein grundlegendes Set an Syntax- un
 
 ### Deklarationsreihenfolge
 
-Um nicht ständig nach einer CSS-Eigenschaft suchen zu müssen, verwenden wir eine feste Deklarationsreihenfolge. Sie ist in logische Blöcke gegliedert, die man sich im Detail in der [Linter-Config](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml) ansehen kann.
+Um nicht ständig nach einer CSS-Eigenschaft suchen zu müssen, verwenden wir eine feste Deklarationsreihenfolge. Sie ist in logische Blöcke gegliedert, die man sich im Detail in der [Linter-Config](https://github.com/zweitag/rails-project-template/blob/master/.sass-lint.yml) ansehen kann.
 
 #### 1. Übergeordnetes
 
@@ -372,7 +372,7 @@ Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Komment
 
 ## Linting
 
-Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Die Dokumention der Regeln findet ihr [hier](https://github.com/sasstools/sass-lint/tree/master/docs/rules). Unsere Konfiguration findet man in unserem [Template-Repo](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml).
+Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Die Dokumention der Regeln findet ihr [hier](https://github.com/sasstools/sass-lint/tree/master/docs/rules). Unsere Konfiguration findet man in unserem [Template-Repo](https://github.com/zweitag/rails-project-template/blob/master/.sass-lint.yml).
 
 ### Verwendungsrichtlinien
 
