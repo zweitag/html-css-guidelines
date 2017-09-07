@@ -84,7 +84,7 @@ Verschachtelungen innerhalb eines Elements beginnen mit Pseudoklassen, gefolgt v
 .main-navigation--link
   display: block
   padding: 5px 0
-  .highlighted > &
+  .main-navigation--item.highlighted &
     color: $color-text-inverted
 ```
 
