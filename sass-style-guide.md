@@ -372,14 +372,22 @@ Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Komment
 
 ## Linting
 
-Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Die Dokumention der Regeln findet ihr [hier](https://github.com/sasstools/sass-lint/tree/master/docs/rules). Der Linter sollte am Ende keine Fehler oder Warnungen ausspucken. Unsere Regeln findet man in der [Linter-Config](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml).
+Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Die Dokumention der Regeln findet ihr [hier](https://github.com/sasstools/sass-lint/tree/master/docs/rules). Unsere Konfiguration findet man in unserem [Template-Repo](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml).
 
-### Installation und Benutzung des Linters
+### Verwendungsrichtlinien
+
+Die Verwendung des Linters für neue Projekte ist **Pflicht**, damit Styleguide-Fragen in dem Projekt gar kein Thema werden.
+
+* Dafür sollte jeder Entwickelnde lokal [die Editor-Integration](https://github.com/sasstools/sass-lint#ide-integration) verwenden, damit Fehler frühestmöglich erkannt werden.
+  * Falls die Editor-Integration keine Option sein sollte, bliebe auch die Möglichkeit eines Pre-Commit-Hooks.
+* Als zusätzliches Sicherheitsnetz sollte ein Check auf Pull-Request-Ebene existieren.
+  *(Hierfür testen wir gerade die TravisCI-Integration.)*
+
+### Installation
 
 1. `npm install -g sass-lint`
-2. `sass-lint -config .sass-lint.yml '**/*.sass' --verbose --no-exit`
-
-Alternativ kann man auch eine der [IDE Integrationen](https://github.com/sasstools/sass-lint#ide-integration) verwenden.
+2. Manueller Check: `sass-lint -config .sass-lint.yml '**/*.sass' --verbose --no-exit`
+3. [Editor-Integration](https://github.com/sasstools/sass-lint#ide-integration) installieren
 
 ## EditorConfig
 
