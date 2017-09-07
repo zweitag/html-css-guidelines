@@ -1,37 +1,24 @@
-## Where to place code?
+# Sass Styleguide
 
-### Order of rules within a Sass file
+## Inhaltsverzeichnis
 
-The order of style rules that should be applied depends on the type of stylesheet.
+- [Einleitung](#einleitung)
+- [Manifest-Datei](#manifest-datei)
+- [Style-Definitionen](#style-definitionen)
+- [Syntax und Formatierung](#syntax-und-formatierung)
+- [Selektorregeln](#selektorregeln)
+- [Coding Konventionen](#coding-konventionen)
+- [Kommentare](#kommentare)
+- [Linting](#linting)
+- [EditorConfig](#editorconfig)
 
-#### Content-driven style definitions
+## Einleitung
 
-* The easiest way to read and find specific content-driven style rules is to visually follow the order of the content on the rendered page. Iterate in this order:
-  1. *Outside in*: Following ZASAF, you are likely to start with the page wrapper element.
-  2. *Left-to-right*: Next, you start with the left-most element, followed by elements in the same (grid) row.
-  3. *Top-to-bottom*: You go on top-to-bottom just how you would read that page
-* Some things are shared, like a variable definition that is referred in multiple parts of your stylesheet. Just put it on top of the first block that uses it. A situation that you should avoid is sharing variables across files. If you cannot avoid that, put it on top of the file.
-* Nestings within the namespace of an element start with pseudo classes, followed by pseudo elements, followed by modifiers, followed by direct children (`>`), followed by children further down the DOM tree (if even necessary). Example:
+Bei der Arbeit an großen, langlebigen Projekten mit mehreren Entwicklern ist es wichtig, dass wir alle einheitlich arbeiten. Unsere oberste Prämisse sollte sein, dass unsere Stylesheets auf der einen Seite leicht pflegbar und skalierbar sind und auf der anderen Seite unser Code transparent und lesbar bleibt. Um dies zu erfüllen, helfen folgende Guidelines.
 
-  ``` sass
-  .main-navigation--item
-    &:hover
-      border-color: $color-border-loud
-    &::before
-      content: '*'
-    &.active
-      > .link
-        +text-navigation-active
-    > .link
-      display: block
-      padding: 5px 0
-    .back-button
-      color: $color-button-unobtrusive
-  ```
+## Manifest-Datei
 
-#### Component files, manifest and base files
-
-You should order your rules from generic to specific. Example:
+Wir splitten unseren Sass-Code in viele kleine Partials auf, die thematisch in sich geschlossen sind. Das erhöht die Flexibilität, Lesbarkeit und Wartbarkeit. In unserer Manifest-Datei ordnen wir unsere Partials dann von generisch hin zu spezifisch.
 
 ``` sass
 // Reset Styles
@@ -45,7 +32,6 @@ You should order your rules from generic to specific. Example:
 // Utility Imports
 //----------------
 @import utilities/center
-@import utilities/hide-text
 @import utilities/visually-hidden
 
 // Global Imports
@@ -59,87 +45,111 @@ You should order your rules from generic to specific. Example:
 
 // Abstract Component Imports
 //---------------------------
-@import abstract-components/section-box
+@import abstract-components/boundary-box
+@import abstract-components/gradient-overlay
 
 // Generic Component Imports
 //--------------------------
 @import generic-components/button
-@import generic-components/skip-links
+@import generic-components/data-table
 
 // Specific Component Imports
 //---------------------------
-@import specific-components/page/page-footer
-@import specific-components/page/page-header
+@import specific-components/company-search
+@import specific-components/page-header
 ```
 
-#### Order of property value assignments within a rule
+## Style-Definitionen
 
-If your setup is build on PostCSS, try [PostCSS Sorting](https://github.com/hudochenkov/postcss-sorting) in cunjunction with [SugarSS](https://github.com/postcss/sugarss).
+Wann wird wo was definiert? Wir gehen inhaltsgetrieben vor, d.h. wir schreiben unseren Sass-Code in der Reihenfolge, wie die Elemente auf der gerenderten Seite erscheinen werden:
 
-1. Display:
-  * visibility
-  * opacity
-  * display
-2. Layout:
-  * flex, flex-direction, flex-wrap, align-items, justify-content …
-  * vertical-align
-  * position
-  * z-index
-  * top, right, bottom, left
-  * float
-  * clear
-  * overflow
-3. Box-Model (box-sizing: border-box):
-  * width
-  * height
-  * margin
-  * border
-  * border-radius
-  * padding
-  * outline
-  * transform
-  * box-shadow
-4. Typography:
-  * font
-  * line-height
-  * text-align
-  * text-decoration
-  * white-space
-5. Colors:
-  * color
-  * fill
-  * background
-6. Miscellaneous:
-  * cursor
-  * transition
-  * pointer-events
-  * …
+1. **von außen nach innen**: ZASAF folgend beginnt man in der Regel mit dem Page-Wrapper-Element.
+2. **von oben nach unten**: Danach unterteilt man sich die Seite in (horizontale) Sektionen und beginnt mit der ersten (page-header -> page-main -> page-footer).
+3. **von links nach rechts**: In einer Sektion fängt man ganz links mit dem ersten Element an (Page-Header: Logo links -> Navigation in der Mitte -> Suche rechts).
 
-## Syntax conventions
+### Notationsreihenfolge innerhalb eines Elements
 
-* We use the old **Sass indented** syntax because it is the more rigid syntax of **Sass** and facilitates code homogeneity. The best way to end the fight between different parenthesis placement practictioners is to simply remove parenthesis. ;)
-* Be consistant with indentation – we’re using two spaces.
-* Use english for naming things. The English language has proven itself among coders as the standard.
-* Use lowercase for class names.
-* Multi-word selectors are **separated by hyphens (`-`)**. This is consistent with general CSS conventions including CSS attribute names and Sass functions.
-* Please place **empty lines only between blocks of code that are not nested**. If you are working on a part of the code you already know your way around. But it is important that you get a quick overview if the whole file is not familiar to you. Besides, it’s easier to recognize the nesting structure if nestings are in one block with the parent selector.
-* Be consistent in declaration order, cluster related properties (see above).
-* Be consistant with quotes – we’re using single quotes.
-* Quote attribute values in selectors, e.g. `input[type='checkbox']`.
-* Write one selector per line, one rule per line.
-* Put a space after `:` in property declarations, e.g. `margin: 0`
-* Include a space after each comma in comma-separated property or function values, e.g. `rgba(255, 255, 255, 0)`.
-* Use rgb and rgba color codes, because most of us can envision what color results by mixing red, green and blue.
+Verschachtelungen innerhalb eines Elements beginnen mit Pseudoklassen, gefolgt von Pseudoelementen, gefolgt von Modifiern. Auf Kindelemente, sowohl direkte als auch tiefer im DOM verschachtelte, sollte weitestgehend verzichtet werden. Hierfür wäre es besser einen neuen Selektorblock zu erstellen (siehe Coding Konventionen unten).
 
-It could be a quick-win to use [Sass Lint](https://github.com/sasstools/sass-lint) in your projects.
+``` sass
+.main-navigation--item
+  position: relative
+  &:hover
+    border-color: $color-border-loud
+  &::before
+    content: '*'
+  &.highlighted
+    background-color: $color-background-loud
 
-## Coding conventions
+.main-navigation--link
+  display: block
+  padding: 5px 0
+  .main-navigation--item.highlighted &
+    color: $color-text-inverted
+```
 
-### Avoid dangerous selectors
+## Syntax und Formatierung
 
-If a selector is too generic, it’s dangerous. In 99% of cases you have to overwrite this rule somewhere. Be more specific. Try using a class instead. (Exception: CSS-Resetstyles)
+Die Basis eines gemeinsam gelebten Stils ist ein grundlegendes Set an Syntax- und Formatierungsregeln. Eine strikte Einhaltung bringt Effizienzpotenziale, weil man Code schneller lesen, verstehen und abgleichen kann. Es ist weniger wahrscheinlich, dass man Dinge übersieht oder missversteht und niemand verbringt Zeit damit, seinen Arbeitsbereich durch Umformatierungen »für sich einzurichten«.
 
-**bad**
+### Schreibweise
+
+- Einrückung: zwei Leerzeichen, keine Tabs
+- Multi-Line-Stil: Ein Selektor pro Zeile, eine Deklaration pro Zeile
+- Selektorverschachtelung: maximal drei Ebenen tief, nach Möglichkeit jedoch vermeiden und eine eigene Klasse für Elemente einer Komponente einführen
+- Alle Bezeichnungen werden auf englisch und klein geschrieben. Setzt man mehrere Wörter zu einem Selektor zusammen, trennt man diese durch einen Bindestrich: `.data-table`.
+- Wir verwenden einfache Anführungszeichen: `font-family: 'Andale Mono'`.
+- Werte in Attributselektoren werden in Anführungszeichen gesetzt: `input[type='checkbox']`.
+- Nach einem `:` hinter der CSS-Eigenschaft gehört ein Leerzeichen: `margin: 0`
+- Nach einem `,` in einer kommaseparierten Liste gehört ein Leerzeichen: `rgba(255, 255, 255, 0.5)`
+- Wir verwenden rgb und rgba Farbcodes, weil sich die meisten von uns vorstellen können, welche Farbe durch das Mischen von Rot, Grün und Blau zustande kommt.
+
+### Deklarationsreihenfolge
+
+Um nicht ständig nach einer CSS-Eigenschaft suchen zu müssen, verwenden wir eine feste Deklarationsreihenfolge. Sie ist in logische Blöcke gegliedert, die man sich im Detail in der [Linter-Config](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml) ansehen kann.
+
+#### 1. Übergeordnetes
+
+- z.B. content, will-change
+
+#### 2. Allgemeine Sichtbarkeit
+
+- z.B. opacity, visibility, display
+
+#### 3. Layout-Mechanismen
+
+- Flexbox: z.B. justify-content, align-items, flex
+- Grid: z.B. columns, column-gap, column-rule
+- Table: z.B. table-layout, border-collapse, border-spacing
+- List: z.B. list-style, counter-increment, counter-reset
+
+#### 4. Positionierung im Raum
+
+- z.B. float, position, vertical-align
+
+#### 5. Box Model inkl. Transformation
+
+- z.B. box-sizing, width, height, margin, border, padding, transform
+
+#### 6. Typografie
+
+- z.B. font, line-height, text-decoration, white-space, word-wrap
+
+#### 7. Farbe
+
+- z.B. fill, color, background
+
+#### 8. Rest
+
+- z.B. cursor, pointer-events, transition
+
+## Selektorregeln
+
+### Vermeide zu generische Selektoren
+
+In 99% der Fälle wird man generische Selektoren überschreiben (müssen), was zu mehr Code und einem erhöhtem Wartungsaufwand führt. Darum sei spezifischer und benutze stattdessen besser eine Klasse. (Ausnahme: CSS-Resetstyles)
+
+**schlecht**
 
 ``` sass
 header
@@ -152,7 +162,7 @@ ul
   list-style-type: circle
 ```
 
-**good**
+**gut**
 
 ``` sass
 .page-header
@@ -165,11 +175,11 @@ ul
   list-style-type: circle
 ```
 
-### Avoid element selectors
+### Vermeide Basiselementselektoren
 
-Element selectors are expensive. Like the rule above, be more specific. Try using a class instead. Furthermore elements like `<div />` and `<span />` should always have a class-attribute in your markup because otherwise they have no function anyway and you can waive them.
+Basiselementselektoren sind schlecht (siehe Regel darüber) und erhöhen die Spezifität unnötigerweise. Auch hier sollte auf eine Klasse zurückgegriffen werden. Außerdem sollten Elemente wie `<div>` und `<span>` im Markup immer ein Klassenattribut besitzen. Andernfalls wären sie sowieso überflüssig.
 
-**bad**
+**schlecht**
 
 ``` sass
 .navigation div
@@ -177,7 +187,7 @@ Element selectors are expensive. Like the rule above, be more specific. Try usin
 .navigation ul
 ```
 
-**good**
+**gut**
 
 ``` sass
 .navigation--box
@@ -185,11 +195,11 @@ Element selectors are expensive. Like the rule above, be more specific. Try usin
 .navigation--list
 ```
 
-### Avoid qualifying class names with element selectors
+### Vermeide eine Überspezifizierung durch Basiselementselektoren
 
-It’s counterproductive because you unnecessary heighten the specifity.
+Eine Überspezifizierung durch Basiselementselektoren hat zur Folge, dass der CSS-Code ans Markup gekoppelt wird. Würde man das Element im Markup ändern, z.B. aus einer `h2` eine `h3` machen, müsste man dies auch im Stylesheet tun, was einen erhöhten Wartungsaufwand nach sich zieht. Obendrein wird die Spezifität unnötigerweise erhöht.
 
-**bad**
+**schlecht**
 
 ``` sass
 ul.link-list
@@ -197,7 +207,7 @@ div.example
 a.back
 ```
 
-**good**
+**gut**
 
 ``` sass
 .link-list
@@ -205,50 +215,27 @@ a.back
 .back
 ```
 
-### Avoid the descendant selector
+### Vermeide Nachfahrenselektoren
 
-The descendant selector is the most expensive selector in CSS. You should target directly if possible.
+Der Nachfahrenselektor ist der teuerste Selektor in CSS. Gib dem entsprechenden Element besser eine Klasse und style es direkt.
 
-**bad**
+**schlecht**
 
 ``` sass
 .link-list li a
 ```
 
-**good**
+**gut**
 
 ``` sass
 .link-list--link
 ```
 
-### Avoid deep nesting
+### Vermeide den selben Selektor fürs Styling (CSS) und fürs Verhalten (JS) zu verwenden
 
-Following to the rule above you should also try to nest your selectors maximum 3 levels deep (pseudo-elements and pseudo-classes not counting).
+Separation of concerns. Möchte man Javascript auf ein Element anwenden, hat es sich etabliert, hierfür ein `data-*`Attribut zu nutzen. Der Vorteil: Ändert man später nochmal das Klassenattribut, bleibt das Javascript weiterhin in Takt.
 
-**bad**
-
-``` sass
-.link-list
-  li
-    a
-      span
-        &:before
-          content: 'i'
-```
-
-**good**
-
-``` sass
-.link-list--info
-  &::before
-    content: 'i'
-```
-
-### Avoid using the same selector for styling and JS
-
-Separation of concerns. If you later change the class name in your CSS you don’t break your JS component.
-
-**bad**
+**schlecht**
 
 ``` sass
 .dialog-opener
@@ -258,25 +245,19 @@ Separation of concerns. If you later change the class name in your CSS you don�
 $('.dialog-opener')
 ```
 
-**good**
-
-use a data-attribute:
+**gut**
 
 ``` js
-$('[data-dialog-opener]')
+$("[data-role='dialog-opener']")
 ```
 
-or use an ID:
+## Coding Konventionen
 
-``` js
-$('#dialog-opener')
-```
+### Benutze die Kurzschreibweise
 
-### Use shorthand properties where possible
+Wenn man alle Werte einer Eigenschaft auf einmal angibt, ist die Kurzschreibweise schneller zu erfassen und spart obendrein ein paar Bytes ein.
 
-It’s shorter and easier to read.
-
-**bad**
+**schlecht**
 
 ``` sass
 .box
@@ -286,18 +267,18 @@ It’s shorter and easier to read.
   padding-left: 10px
 ```
 
-**good**
+**gut**
 
 ``` sass
 .box
   padding: 0 10px 20px
 ```
 
-### Declare only those values you really want to set
+### Gib nur die Werte an, die du auch setzen willst
 
-If you set too much values it might be possible that you accidentally overwrite an inherited one. Or the other way round you later have to overwrite this value once again because the newly set value inherits itself.
+Wenn man zu viele Werte auf einmal angibt, könnte es sein, dass man versehentlich einen vererbten Wert überschreibt. Außerdem muss man diesen Wert dann u.U. später nochmal überschreiben, weil er sich wiederum selbst weitervererbt hat.
 
-**bad**
+**schlecht**
 
 ``` sass
 .box
@@ -305,7 +286,7 @@ If you set too much values it might be possible that you accidentally overwrite 
   background: rgba(0, 0, 0, 0.5)
 ```
 
-**good**
+**gut**
 
 ``` sass
 .box
@@ -313,95 +294,113 @@ If you set too much values it might be possible that you accidentally overwrite 
   background-color: rgba(0, 0, 0, 0.5)
 ```
 
-### Omit unit specification after “0” values
+### Vermeide die Einheitsangabe nach dem Wert "0"
 
-Zero is zero. :)
+Null ist Null. :)
 
-**bad**
+**schlecht**
 
 ``` sass
 .box
   margin: 0px
 ```
 
-**good**
+**gut**
 
 ``` sass
 .box
   margin: 0
 ```
 
-**exception, where you don’t omit**
+**Ausnahme dort, wo sie nicht weggelassen werden darf**
 
 ``` sass
 .box
   transform: rotate(0deg)
 ```
 
-### Use number keywords 100–900 for font-weight
+### Nutze 100–900 bei der Angabe der Schriftdicke
 
-It’s the typographic standard to use number keywords. Also it’s shorter and saves some bits.
+Die Zahlen 100, 200 … 900 sind typografischer Standard und erlauben es uns, differenzierter mit Abstufungen der Schriftdicke umzugehen als es _normal_ und _bold_ tun.
 
-**bad**
+**schlecht**
 
 ``` sass
 .box
   font-weight: bold
 ```
 
-**good**
+**gut**
 
 ``` sass
 .box
   font-weight: 700
 ```
 
-## Usage of comments
+## Kommentare
 
-We want to make it easy for others to find their way through stylesheets. Therefore, we group rules and give them a title by writing a comment. We distinguish 3 types of comments:
+Da man bei CSS nicht immer sofort sieht, warum eine Deklaration eingesetzt wird, macht es durchaus Sinn, Code zu kommentieren. Durch die Verwendung von Sass greifen wir dabei auf stille Kommentare zurück, die mit zwei Slashes `// …` eingeleitet werden. In der Regel sind Kommentare nur für die Entwickler wichtig und müssen dadurch nicht im CSS ausgegeben werden. Das reduziert zudem die Dateigröße.
 
-* Simple Comments, refering only to the directly following ruleset
-  * Syntax: begins with `//`
-* Group Comments that group multiple rulesets together
-  * Syntax: separated with `---` from the first ruleset of the group
-* Headline Comments that group multiple groups together
-  * Before you introduce this hierarchy level, consider to split up your stylesheet into multiple partials
-  * Syntax: separated with `===` and a new line from the first group comment
-
-Example:
+Möchte man eine einzelne Zeile in einem Block kommentieren, so setzt man den Kommentar ans Ende der Deklaration:
 
 ``` sass
-// Photo Styles
-//=============
+.box
+  position: absolute
+  top: -12px // Fallback if JS fails to load
+```
 
-// Shared Photo Styles
-//--------------------
-// The photo-corners mixin provides cross-browser … (simple comment)
-=photo-corners
-  …
+Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Kommentar direkt darüber:
 
-.photo-gallery
-  …
+``` sass
+// Global Styles
+.box
+  position: relative
 
-.photo-stream
-  …
+// Media Queries
++respond-to(large)
+  .box
+    margin-top: 20px
 
-// Photo Contest Panel
-//--------------------
-.photo-contest-panel
-  …
++respond-to(medium)
+  .box
+    margin-top: 10px
 
-// Video Styles
-//=============
++respond-to(small)
+  .box
+    margin-top: 5px
+```
 
-// Video Gallery
-//--------------
-.video-gallery
-  …
+## Linting
 
-// Video Contest Panel
-//--------------------
-.video-contest-panel
-  …
+Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Die Dokumention der Regeln findet ihr [hier](https://github.com/sasstools/sass-lint/tree/master/docs/rules). Unsere Konfiguration findet man in unserem [Template-Repo](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml).
 
+### Verwendungsrichtlinien
+
+Die Verwendung des Linters für neue Projekte ist **Pflicht**, damit Styleguide-Fragen in dem Projekt gar kein Thema werden.
+
+* Dafür sollte jeder Entwickelnde lokal [die Editor-Integration](https://github.com/sasstools/sass-lint#ide-integration) verwenden, damit Fehler frühestmöglich erkannt werden.
+  * Falls die Editor-Integration keine Option sein sollte, bliebe auch die Möglichkeit eines Pre-Commit-Hooks.
+* Als zusätzliches Sicherheitsnetz sollte ein Check auf Pull-Request-Ebene existieren.
+  *(Hierfür testen wir gerade die TravisCI-Integration.)*
+
+### Installation
+
+1. `npm install -g sass-lint`
+2. Manueller Check: `sass-lint -config .sass-lint.yml '**/*.sass' --verbose --no-exit`
+3. [Editor-Integration](https://github.com/sasstools/sass-lint#ide-integration) installieren
+
+## EditorConfig
+
+Um unschöne Diffs zu vermeiden, sollte man sich seinen Editor folgendermaßen einrichten:
+
+``` shell
+# editorconfig.org
+
+[*.{sass,scss}]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
 ```
