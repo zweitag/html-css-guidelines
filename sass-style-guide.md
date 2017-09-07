@@ -106,7 +106,7 @@ Die Basis eines gemeinsam gelebten Stils ist ein grundlegendes Set an Syntax- un
 
 ### Deklarationsreihenfolge
 
-Um nicht ständig nach einer CSS-Eigenschaft suchen zu müssen, verwenden wir eine feste Deklarationsreihenfolge. Sie ist in logische Blöcke gegliedert, die man sich im Detail in der [Linter-Config](https://github.com/zweitag/rails-project-template/pull/57) ansehen kann.
+Um nicht ständig nach einer CSS-Eigenschaft suchen zu müssen, verwenden wir eine feste Deklarationsreihenfolge. Sie ist in logische Blöcke gegliedert, die man sich im Detail in der [Linter-Config](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml) ansehen kann.
 
 #### 1. Übergeordnetes
 
@@ -372,7 +372,7 @@ Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Komment
 
 ## Linting
 
-Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Der Linter sollte am Ende keine Fehler oder Warnungen ausspucken.
+Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Der Linter sollte am Ende keine Fehler oder Warnungen ausspucken. Alle Regeln findet man in der [Linter-Config](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml).
 
 ## EditorConfig
 
