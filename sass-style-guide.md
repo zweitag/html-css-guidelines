@@ -374,6 +374,13 @@ Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Komment
 
 Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Die Dokumention der Regeln findet ihr [hier](https://github.com/sasstools/sass-lint/tree/master/docs/rules). Der Linter sollte am Ende keine Fehler oder Warnungen ausspucken. Unsere Regeln findet man in der [Linter-Config](https://github.com/zweitag/rails-project-template/blob/725fb08bad935e6ae560a92618b787da319e843a/.sass-lint.yml).
 
+### Installation und Benutzung des Linters
+
+1. `npm install -g sass-lint`
+2. `sass-lint -config .sass-lint.yml '**/*.sass' --verbose --no-exit`
+
+Alternativ kann man auch eine der [IDE Integrationen](https://github.com/sasstools/sass-lint#ide-integration) verwenden.
+
 ## EditorConfig
 
 Um unschöne Diffs zu vermeiden, sollte man sich seinen Editor folgendermaßen einrichten:
