@@ -236,7 +236,7 @@ Im Ordner `utilitis` finden sich Mixins, die in Komponenten eingesetzt werden k√
 ## Best Practices
 
 * [Customizing Components](customizing-components.md)
-* [CSS BEst Practices](css-best-practices.md)
+* [CSS Best Practices](css-best-practices.md)
 * [Portability](http://cssguidelin.es/#portability)
 * [Specificity](http://cssguidelin.es/#specificity)
 
