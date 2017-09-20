@@ -90,6 +90,10 @@ Verschachtelungen innerhalb eines Elements beginnen mit Pseudoklassen, gefolgt v
 
 Die Basis eines gemeinsam gelebten Stils ist ein grundlegendes Set an Syntax- und Formatierungsregeln. Eine strikte Einhaltung bringt Effizienzpotenziale, weil man Code schneller lesen, verstehen und abgleichen kann. Es ist weniger wahrscheinlich, dass man Dinge übersieht oder missversteht und niemand verbringt Zeit damit, seinen Arbeitsbereich durch Umformatierungen »für sich einzurichten«.
 
+### Sass oder SCSS
+
+Grundsätzlich lieben wir prägnanten Code, d.h. Klammern und Semikolons betrachten wir als visuelles Rauschen. Im Zusammenspiel mit Haml benutzen wir daher die *Sass-Syntax*, da sie sehr homogen dazupasst. Wir verstehen aber auch, dass ein Umgewöhnen mit Kosten verbunden ist und wenn der Haml-Vorteil wegfällt, die initialen Entwickler auf dem Projekt nach ihrer Präferenz entscheiden können. So ist es z.B. bei der Entwicklung einer React-App Usus, die *SCSS-Syntax* zu verwenden.
+
 ### Schreibweise
 
 - Einrückung: zwei Leerzeichen, keine Tabs
