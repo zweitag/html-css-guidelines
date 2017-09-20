@@ -159,7 +159,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
 </table>
 
 * Der Komponenten-Namensraum wird also mit `--` vom Elementnamen abgegrenzt.
-* Modifier kommen ohne Namensraum aus, da sie ausschließlich in Kombination mit einer Komponente bzw. einem Element eingesetzt werden
+* Modifier kommen ohne Namensraum aus, da sie ausschließlich in Kombination mit einer Komponente bzw. einem Element eingesetzt werden.
 
 ### Beispiel
 
@@ -217,7 +217,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
 
 ### Globales
 
-Im Order `globals` finden sich globale Basisstile und Konfigurationen:
+Im Order `globals` befinden sich globale Basisstile und Konfigurationen:
 
 * _base.css.sass: Styling der HTML-Elemente (z.B. `strong {font-weight: 700}`)
 * _colors.css.sass: Farbdeklarationen (z.B. `$color-accent: $curious-blue`)
@@ -227,7 +227,7 @@ Im Order `globals` finden sich globale Basisstile und Konfigurationen:
 
 ### Hilfsmittel
 
-Im Ordner `utilitis` finden sich Mixins, die in Komponenten eingesetzt werden können:
+Im Ordner `utilities` befinden sich Mixins, die in Komponenten eingesetzt werden können:
 
 * _clearfix.css.sass
 * _font-smoothing.css.sass
