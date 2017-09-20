@@ -1,5 +1,12 @@
 # CSS Best Practices
 
+Um uns das Leben beim Schreiben von CSS leicht zu machen, sollte die Spezifität so niedrig wie möglich gehalten werden. Folgende Regeln helfen dabei:
+
+* keine Verwendung von IDs
+* Verschachtelung von Selektoren auf ein Minimum reduzieren
+* Vermeidung einer Überspezifizierung
+* auf eine Verkettung von Selektoren verzichten
+
 ## Selektorregeln
 
 ### Vermeide zu generische Selektoren

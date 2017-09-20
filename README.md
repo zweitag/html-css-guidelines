@@ -1,6 +1,8 @@
 # Zweitag Approach to Scalable and Adaptable Frontends (ZASAF)
 
-[Einleitung zur Wichtigkeit von CSS Guidelines](http://cssguidelin.es/#introduction)
+Bei der Arbeit an großen, langlebigen Projekten mit vielen Entwicklern unterschiedlicher Spezialisierungen und Fähigkeiten ist es wichtig, dass alle einheitlich arbeiten, um Stylesheets sowohl pflegbar als auch skalierbar zu halten und um zu gewährleisten, dass der Code transparent und lesbar bleibt.
+
+Aus diesem Antrieb heraus entstand dieser Styleguide, der es Entwicklern ermöglichen soll, die Code-Qualität hochzuhalten, die Code-Konsistenz zu wahren und produktiver zu arbeiten.
 
 ZASAF folgt dem Grundgedanken von [BEM](http://getbem.com/) und [SMACSS](http://smacss.com), dass Frontends modular aufgebaut werden sollten.
 Dabei unterscheiden wir jedoch noch einmal zwischen generischen und spezifischen Komponenten.
@@ -237,8 +239,6 @@ Im Ordner `utilitis` finden sich Mixins, die in Komponenten eingesetzt werden k�
 
 * [Customizing Components](customizing-components.md)
 * [CSS Best Practices](css-best-practices.md)
-* [Portability](http://cssguidelin.es/#portability)
-* [Specificity](http://cssguidelin.es/#specificity)
 
 ## Style Guides
 
