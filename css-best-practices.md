@@ -11,7 +11,7 @@ Um uns das Leben beim Schreiben von CSS leicht zu machen, sollte die Spezifität
 
 ### Vermeide zu generische Selektoren
 
-In 99% der Fälle wird man generische Selektoren überschreiben (müssen), was zu mehr Code und einem erhöhtem Wartungsaufwand führt. Darum sei spezifischer und benutze stattdessen besser eine Klasse. (Ausnahme: CSS-Resetstyles)
+Um den Code einfacher erweitern und besser warten zu können, ist ein gezieltes Styling von Elementen immens wichtig. Die Faustregel dazu: Sobald ein Element gestylet werden soll, setze eine Klasse.
 
 **schlecht**
 
