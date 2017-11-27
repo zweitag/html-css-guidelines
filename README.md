@@ -142,7 +142,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
       .fact-list__entry
         list-style-type: discline-height: 1.2
       .fact-list__entry--highlighted
-        font-weight: bold
+        font-weight: 700
       </pre>
     </td>
     <td>
@@ -152,7 +152,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
       .fact-list--entry
         line-height: 1.2
         &.highlighted
-          font-weight: bold
+          font-weight: 700
       </pre>
     </td>
   </tr>
