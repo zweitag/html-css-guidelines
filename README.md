@@ -213,6 +213,10 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
   +column(8)
  ```
 
+### Anpassung von Komponenten
+
+Um ein und dieselbe Komponente auf unterschiedliche Art und Weise zu stylen, [gibt es folgende Optionen.](customizing-components.md)
+
 ## Globales und Hilfsmittel
 
 ### Globales
@@ -235,12 +239,8 @@ Im Ordner `utilities` befinden sich Mixins, die in Komponenten eingesetzt werden
 * _responsify.css.sass
 * …
 
-## Best Practices
-
-* [Customizing Components](customizing-components.md)
-* [CSS Best Practices](css-best-practices.md)
-
-## Style Guides
+## Style Guides & Best Practices
 
 * [Haml Style Guide](haml-style-guide.md)
 * [Sass Style Guide](sass-style-guide.md)
+* [CSS Best Practices](css-best-practices.md)
