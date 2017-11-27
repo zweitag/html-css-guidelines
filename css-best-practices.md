@@ -1,11 +1,6 @@
 # CSS Best Practices
 
-Um uns das Leben beim Schreiben von CSS leicht zu machen, sollte die Spezifität so niedrig wie möglich gehalten werden. Folgende Regeln helfen dabei:
-
-* keine Verwendung von IDs
-* Verschachtelung von Selektoren auf ein Minimum reduzieren
-* Vermeidung einer Überspezifizierung
-* auf eine Verkettung von Selektoren verzichten
+Die Grundvoraussetzung für wartbares, leicht zu lesendes CSS ist eine niedrige Spezifität. Das CSS sollte so geschrieben werden, dass der Selektor spezifisch für das zu stylende Element ist. Dadurch wird ein Selektorstreit aus dem Weg gegangen und ein unnötiges Überschreiben von Selektoren vermieden (Ausnahmen bilden Modifier).
 
 ## Selektorregeln
 
@@ -81,7 +76,7 @@ a.back
 
 ### Vermeide Nachfahrenselektoren
 
-Der Nachfahrenselektor ist der teuerste Selektor in CSS. Gib dem entsprechenden Element besser eine Klasse und style es direkt.
+Der Nachfahrenselektor ist der teuerste Selektor in CSS. Die Verschachtelung von Selektoren muss auf ein Minimum reduziert werden. Gib dem entsprechenden Element besser eine Klasse und style es direkt.
 
 **schlecht**
 
@@ -89,10 +84,32 @@ Der Nachfahrenselektor ist der teuerste Selektor in CSS. Gib dem entsprechenden 
 .link-list li a
 ```
 
+**genauso schlecht**
+
+``` sass
+.link-list .link-list--link
+```
+
 **gut**
 
 ``` sass
 .link-list--link
+```
+
+### Vermeide ID-Selektoren
+
+Es gibt zwei Gründe, warum man ID-Selektoren nicht fürs Styling verwenden sollte. Zum einen schraubt eine ID die Spezifität hoch, die im Grunde nur mit Nutzung einer weiteren ID wieder überschrieben werden kann. Das spricht gegen unser Mantra, die Spezifitäät niedrig zu halten (s.o.). Zum anderen müssen IDs im Markup einzigartig sein, woraus folgt, dass man Komponenten mit IDs nicht wiederverwenden kann.
+
+**schlecht**
+
+``` sass
+#navigation
+```
+
+**gut**
+
+``` sass
+.navigation
 ```
 
 ### Vermeide den selben Selektor fürs Styling (CSS) und fürs Verhalten (JS) zu verwenden
