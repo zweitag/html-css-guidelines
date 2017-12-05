@@ -92,7 +92,7 @@ Die Basis eines gemeinsam gelebten Stils ist ein grundlegendes Set an Syntax- un
 
 ### Sass oder SCSS
 
-Grundsätzlich lieben wir prägnanten Code, d.h. Klammern und Semikolons betrachten wir als visuelles Rauschen. Im Zusammenspiel mit Haml benutzen wir daher die *Sass-Syntax*, da sie sehr homogen dazupasst. Wir verstehen aber auch, dass ein Umgewöhnen mit Kosten verbunden ist und wenn der Haml-Vorteil wegfällt, die initialen Entwickler auf dem Projekt nach ihrer Präferenz entscheiden können. So ist es z.B. bei der Entwicklung einer React-App Usus, die *SCSS-Syntax* zu verwenden.
+Grundsätzlich lieben wir prägnanten Code, d.h. Klammern und Semikolons betrachten wir als visuelles Rauschen. Im Zusammenspiel mit Haml benutzen wir daher die *Sass-Syntax*, da sie sehr homogen dazupasst. Wir verstehen aber auch, dass ein Umgewöhnen mit Kosten verbunden ist und wenn der Haml-Vorteil wegfällt, können die initialen Entwickler auf dem Projekt nach ihrer Präferenz entscheiden. So ist es z.B. bei der Entwicklung einer React-App Usus, die *SCSS-Syntax* zu verwenden.
 
 ### Schreibweise
 
