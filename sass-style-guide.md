@@ -183,9 +183,8 @@ Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sassto
 Die Verwendung des Linters für neue Projekte ist **Pflicht**, damit Styleguide-Fragen in dem Projekt gar kein Thema werden.
 
 * Dafür sollte jeder Entwickelnde lokal [die Editor-Integration](https://github.com/sasstools/sass-lint#ide-integration) verwenden, damit Fehler frühestmöglich erkannt werden.
-  * Falls die Editor-Integration keine Option sein sollte, bliebe auch die Möglichkeit eines Pre-Commit-Hooks.
-* Als zusätzliches Sicherheitsnetz sollte ein Check auf Pull-Request-Ebene existieren.
-  *(Hierfür testen wir gerade die TravisCI-Integration.)*
+* Falls die Editor-Integration keine Option sein sollte, bliebe auch die Möglichkeit eines Pre-Commit-Hooks.
+* Als zusätzliches Sicherheitsnetz sollte ein Check auf Pull-Request-Ebene existieren. Hierfür stellen wir eine TravisCI-Integration zur Verfügung.
 
 ### Installation
 

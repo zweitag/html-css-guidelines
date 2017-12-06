@@ -1,8 +1,8 @@
-## HAML best practices
+# HAML Styleguide
 
 Because of the importance indentation has on how your code is rendered, the indents should be consistent throughout the document. Any differences in indentation will throw an error. It's common-practice to use two spaces.
 
-### How to use HTML elements
+## How to use HTML elements
 
 To write your tags, use the percent sign followed by the name of the tag
 
@@ -30,7 +30,7 @@ If you want to add multiple classes, simply chain them:
 .container.large.unobtrusive
 ```
 
-### How to use comments
+## How to use comments
 
 There’re three different styles to write comments in Haml.
 
@@ -56,11 +56,11 @@ There’re three different styles to write comments in Haml.
 
 **Note:** Single and multiline comments will be redenred into the document. Therefore we commonly choose the third option because usually comments are meant for developers only.
 
-### Use blocks
+## Use blocks
 
 HAML isn’t Ruby, but it still incorporates some convenient elements of it, and there’s no better example of that than the block syntax.
 
-#### Morph code into block format with `precede`, `succeed` and `surround`
+### Morph code into block format with `precede`, `succeed` and `surround`
 
 **Example:**
 
@@ -93,7 +93,7 @@ Using inline HTML and `content_tag`
 
 This isn’t terrible, but the above blocks are much more readable!
 
-#### Use `link_to` as a block
+### Use `link_to` as a block
 
 When wrapping long or multiple elements in a link tag, It’s wise to use `link_to` in block format.
 
@@ -125,7 +125,7 @@ Rails routing is best used with its built-in helper methods, where objects can b
 %a{href: users_path(@user)} View User Profile
 ```
 
-#### Use `list_of`
+### Use `list_of`
 
 A lesser known – and thus, lesser used – feature of HAML is `list_of`.
 This method generates * elements for you as you iterate over a list of items.
@@ -158,7 +158,7 @@ Whitespace abuse. Every time you use `list_of`, you’ve saved one indentation. 
         = link_to student.name, [course, student]
 ```
 
-### Use filters
+## Use filters
 
 Use the colon to define [Haml filters](http://haml.info/docs/yardoc/file.REFERENCE.html#filters). This allows you to pass an indented block of text as input to another filtering program and add the result to the output of Haml.
 
@@ -176,7 +176,7 @@ Use the colon to define [Haml filters](http://haml.info/docs/yardoc/file.REFEREN
   console.log('This is inline script');
 ```
 
-### Use curly braces
+## Use curly braces
 
 The name of the game here is readability and a big part of readability is DRY.
 
@@ -206,7 +206,7 @@ Note that you can also pass in hashes directly into the data attribute, and it w
 .profile(data-name='Popeye' data-favorite-food='Spinach') Loading
 ```
 
-### Use alternative expression methods
+## Use alternative expression methods
 
 At this point, you know exactly what `-` and `=` do in your HAML views, but what about the other fun Ruby expression outputting methods? These alternative outputting methods have got to be some of the most underused features of HAML, yet is one of the most useful, especially for internal communication.
 
@@ -256,6 +256,6 @@ When you don’t know about interpolated Ruby code, you’re bound to pull this 
 
 Don’t bother with these strings – just cut right into the interpolated input expressed above and save characters and eye strain.
 
-### HAML Cheat-Sheet
+## HAML Cheat-Sheet
 
 * https://www.cheatography.com/specialbrand/cheat-sheets/haml/

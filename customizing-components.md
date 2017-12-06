@@ -1,4 +1,4 @@
-## How do I customize components?
+# How do I customize components?
 
 The ZASAF follows the Convention over Configuration principle: You should write components that come with good defaults.
 If you want to deviate from the default there are two options:
@@ -9,7 +9,7 @@ If you want to deviate from the default there are two options:
 Each of those options come with its own pros and cons, so choose carefully.
 Translate your rule into a human-understandable sentence – is this what you want to declare?
 
-### Example
+## Example
 
 ``` haml
 .product-page
@@ -27,7 +27,7 @@ Translate your rule into a human-understandable sentence – is this what you wa
 So we start with a basic `.teaser` component in the sidebar of the `.product-page`.
 Now we look at the PSD or HTML or whatever the designer gave us and observe that this teaser should be more grayish than normal.
 
-#### Option 1: Add a modifier
+### Option 1: Add a modifier
 
 ``` sass
 .teaser
@@ -65,7 +65,7 @@ Examples:
   …
 ```
 
-#### Option 2: Location-based customization
+### Option 2: Location-based customization
 
 Now you are saying: "This particular teaser should be unobtrusive."
 
