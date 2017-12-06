@@ -6,6 +6,7 @@
 - [Manifest-Datei](#manifest-datei)
 - [Style-Definitionen](#style-definitionen)
 - [Syntax und Formatierung](#syntax-und-formatierung)
+- [Mixins vs. Extends](#mixins-vs-extends)
 - [Kommentare](#kommentare)
 - [Linting](#linting)
 - [EditorConfig](#editorconfig)
@@ -144,6 +145,10 @@ Um nicht ständig nach einer CSS-Eigenschaft suchen zu müssen, verwenden wir ei
 #### 8. Rest
 
 - z.B. cursor, pointer-events, transition
+
+## Mixins vs. Extends
+
+Wir arbeiten ausschließlich mit Mixins, [da Extends einige Nachteile mit sich bringen.](https://www.sitepoint.com/avoid-sass-extend/)
 
 ## Kommentare
 
