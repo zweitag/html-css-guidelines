@@ -178,7 +178,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
 
 #### assets/stylesheets/generic-components/_headline.css.sass
 
-```sass
+``` sass
 .headline
   +font-serif
   &.xl
@@ -187,7 +187,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
 
 #### assets/stylesheets/generic-components/_media-list.css.sass
 
-```sass
+``` sass
 .media-list
   margin-bottom: 20px
   
@@ -198,8 +198,9 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
   display: block
  ```
  
- #### assets/stylesheets/specific-components/_product.css.sass
-```sass
+#### assets/stylesheets/specific-components/_product.css.sass
+
+``` sass
 .product
   background-color: $color-product-background
   
@@ -232,10 +233,10 @@ Im Ordner `utilitis` finden sich Mixins, die in Komponenten eingesetzt werden k�
 * _responsify.css.sass
 * …
 
-## Selector Best Practices
+## Best Practices
 
 * [Customizing Components](customizing-components.md)
-* [Selector Intent](http://cssguidelin.es/#selector-intent)
+* [CSS Best Practices](css-best-practices.md)
 * [Portability](http://cssguidelin.es/#portability)
 * [Specificity](http://cssguidelin.es/#specificity)
 
