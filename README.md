@@ -140,7 +140,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
       .fact-list
         list-style-type: disc
       .fact-list__entry
-        list-style-type: discline-height: 1.2
+        line-height: 1.2
       .fact-list__entry--highlighted
         font-weight: 700
       </pre>
@@ -173,7 +173,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
         %img.media-list--image{…}
       %li.media-list--item
         %img.media-list--image{…}
-      
+
   .product--information
     %h1.headline.xl Musterprodukt
 ```
@@ -192,23 +192,23 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
 ``` sass
 .media-list
   margin-bottom: 20px
-  
+
 .media-list--item
   width: 100%
-  
+
 .media-list--image
   display: block
  ```
- 
+
 #### assets/stylesheets/specific-components/_product.css.sass
 
 ``` sass
 .product
   background-color: $color-product-background
-  
+
 .product--images
   +column(4)
-  
+
 .product--information
   +column(8)
  ```
