@@ -213,10 +213,6 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
   +column(8)
  ```
 
-### Anpassung von Komponenten
-
-Um ein und dieselbe Komponente auf unterschiedliche Art und Weise zu stylen, [gibt es folgende Optionen.](customizing-components.md)
-
 ## Globales und Hilfsmittel
 
 ### Globales
