@@ -182,7 +182,7 @@ Alle Media Queries sind gleichwertig, es gibt kein *Desktop first* oder *Mobile 
 
 **Vorteile:**
 
-- **Effizienz** – Styling-Anpassungen sind schneller und gezielter zu bewerkstelligen. Tritt z.B. auf Smartphone XY ein Darsellungsfehler auf oder man möchte ein Element für die kleinste Viewport-Range optimieren, dann steuert man direkt den Block unter `+respond-to(small)` an und macht dort seine Änderungen.
+- **Effizienz** – Styling-Anpassungen sind schneller und gezielter zu bewerkstelligen. Tritt z.B. auf Smartphone XY ein Darstellungsfehler auf oder man möchte ein Element für die kleinste Viewport-Range optimieren, dann steuert man direkt den Block unter `+respond-to(small)` an und macht dort seine Änderungen.
 - **Leserlichkeit** – Dadurch, dass alle Media Query Definitionen en bloc am Ende stehen, sind sie nicht nur leichter aufzufinden, das Stylesheet bleibt obendrein auch leserlich. Würde man die Media Queries direkt ans Element schreiben, enstünde durch die ständige Einrückung im Code ein stockender Lesefluss.
 - **Wartbarkeit** – Bei dieser Vorgehensweise ist zudem mit weniger ungewollten Seiteneffekten zu rechnen. Es können keine Fehler in anderen Media Queries entstehen, da diese voneinander abgeschottet sind.
 
