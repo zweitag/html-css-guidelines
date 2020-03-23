@@ -98,7 +98,7 @@ Der Nachfahrenselektor ist der teuerste Selektor in CSS. Die Verschachtelung von
 
 ### Vermeide ID-Selektoren
 
-Es gibt zwei Gründe, warum man ID-Selektoren nicht fürs Styling verwenden sollte. Zum einen schraubt eine ID die Spezifität hoch, die im Grunde nur mit Nutzung einer weiteren ID wieder überschrieben werden kann. Das spricht gegen unser Mantra, die Spezifitäät niedrig zu halten (s.o.). Zum anderen müssen IDs im Markup einzigartig sein, woraus folgt, dass man Komponenten mit IDs nicht wiederverwenden kann.
+Es gibt zwei Gründe, warum man ID-Selektoren nicht fürs Styling verwenden sollte. Zum einen schraubt eine ID die Spezifität hoch, die im Grunde nur mit Nutzung einer weiteren ID wieder überschrieben werden kann. Das spricht gegen unser Mantra, die Spezifität niedrig zu halten (s.o.). Zum anderen müssen IDs im Markup einzigartig sein, woraus folgt, dass man Komponenten mit IDs nicht wiederverwenden kann.
 
 **schlecht**
 
