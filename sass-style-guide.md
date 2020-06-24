@@ -303,7 +303,7 @@ Die Verwendung des Linters für neue Projekte ist **Pflicht**, damit Styleguide-
 ### Installation
 
 1. `npm install -g stylelint stylelint-order`
-2. Manueller Check: `stylelint --config .stylelintrc --formatter verbose 'app/javascript/spa/stylesheets/**/*.s+(a|c)ss'`
+2. Manueller Check: `stylelint --config .stylelintrc --formatter verbose 'assets/stylesheets/**/*.s+(a|c)ss'`
 3. [Editor-Integration](https://stylelint.io/user-guide/integrations/editor) installieren
 
 ## EditorConfig
