@@ -290,21 +290,21 @@ Möchte man dagegen einen kompletten Block beschreiben, so setzt man den Komment
 
 ## Linting
 
-Zum Testen unseres Sass-Codes benutzen wir [Sass Lint](https://github.com/sasstools/sass-lint). Die Dokumention der Regeln findet ihr [hier](https://github.com/sasstools/sass-lint/tree/master/docs/rules). Unsere Konfiguration findet man in unserem [Template-Repo](https://github.com/zweitag/rails-project-template/blob/master/.sass-lint.yml).
+Zum Testen unseres Sass-Codes benutzen wir [Stylelint](https://stylelint.io). Die Dokumention der Regeln findet ihr [hier](https://stylelint.io/user-guide/rules/list). Unsere Konfiguration findet man in unserem [Template-Repo](https://github.com/zweitag/rails-project-template/blob/master/.stylelintrc).
 
 ### Verwendungsrichtlinien
 
 Die Verwendung des Linters für neue Projekte ist **Pflicht**, damit Styleguide-Fragen in dem Projekt gar kein Thema werden.
 
-* Dafür sollte jeder Entwickelnde lokal [die Editor-Integration](https://github.com/sasstools/sass-lint#ide-integration) verwenden, damit Fehler frühestmöglich erkannt werden.
+* Dafür sollte jeder Entwickelnde lokal [die Editor-Integration](https://stylelint.io/user-guide/integrations/editor) verwenden, damit Fehler frühestmöglich erkannt werden.
 * Falls die Editor-Integration keine Option sein sollte, bliebe auch die Möglichkeit eines Pre-Commit-Hooks.
 * Als zusätzliches Sicherheitsnetz sollte ein Check auf Pull-Request-Ebene existieren. Hierfür stellen wir eine TravisCI-Integration zur Verfügung.
 
 ### Installation
 
-1. `npm install -g sass-lint`
-2. Manueller Check: `sass-lint -config .sass-lint.yml '**/*.sass' --verbose --no-exit`
-3. [Editor-Integration](https://github.com/sasstools/sass-lint#ide-integration) installieren
+1. `npm install -g stylelint stylelint-order`
+2. Manueller Check: `stylelint --config .stylelintrc --formatter verbose 'app/javascript/spa/stylesheets/**/*.s+(a|c)ss'`
+3. [Editor-Integration](https://stylelint.io/user-guide/integrations/editor) installieren
 
 ## EditorConfig
 
