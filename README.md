@@ -94,12 +94,13 @@ Varianten und Status einer Komponente werden mit Modifier abgebildet. Sie treten
 
 #### Beispiele
 
-`.button.primary`, `.text-link.unobtrusive`, `.product-list--entry.sold-out`, `.button.primary.disabled`
+`.button.is-primary`, `.text-link.is-unobtrusive`, `.product-list--entry.is-sold-out`, `.button.primary.is-disabled`
 
 #### Eigenschaften des Namens
 
 * beschreibt einen Zustand oder besonderes Verhalten einer Komponenteninstanz, wodurch eine Variante entsteht
-* ist idealerweise ein einfaches Adjektiv
+* ist idealerweise ein einfaches Adjektiv mit dem Prefix `is-` oder `has-`
+* die Prefixe werden benötigt, damit ein Modifier einfach identifiziert werden kann und auch Zustände ohne einfaches Adjektiv abgebildet werden können
 * steht nie alleine, sondern ist nur in Verbindung mit der Komponente eindeutig ([Warum?](https://github.com/zweitag/html-css-guidelines/pull/2#discussion_r123475470))
 
 ### Block, Element, Modifier (BEM)
@@ -130,7 +131,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
       <pre lang="haml">
       %ul.fact-list
         %li.fact-list--entry
-        %li.fact-list--entry.highlighted
+        %li.fact-list--entry.is-highlighted
       </pre>
     </td>
   </tr>
@@ -151,7 +152,7 @@ Die Syntax von BEM finden wir jedoch etwas sperrig und haben uns für ein andere
         list-style-type: disc
       .fact-list--entry
         line-height: 1.2
-        &.highlighted
+        &.is-highlighted
           font-weight: 700
       </pre>
     </td>
