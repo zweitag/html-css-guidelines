@@ -100,7 +100,7 @@ Varianten und Status einer Komponente werden mit Modifier abgebildet. Sie treten
 
 * beschreibt einen Zustand oder besonderes Verhalten einer Komponenteninstanz, wodurch eine Variante entsteht
 * ist idealerweise ein einfaches Adjektiv mit dem Prefix `is-` oder `has-`
-* die Prefixe werden benötigt, damit ein Modifier einfach identifiziert werden kann und auch Zustände ohne einfaches Adjektiv abgebildet werden können
+* die Prefixe werden benötigt, damit ein Modifier einfach identifiziert werden kann und Zustände abgebildet werden können, für die Adjektive nicht ausreichend sind
 * steht nie alleine, sondern ist nur in Verbindung mit der Komponente eindeutig ([Warum?](https://github.com/zweitag/html-css-guidelines/pull/2#discussion_r123475470))
 
 ### Block, Element, Modifier (BEM)
