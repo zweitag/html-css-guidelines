@@ -94,12 +94,14 @@ Varianten und Status einer Komponente werden mit Modifier abgebildet. Sie treten
 
 #### Beispiele
 
-`.button.is-primary`, `.text-link.is-unobtrusive`, `.product-list--entry.is-sold-out`, `.button.primary.is-disabled`
+* `.button.is-primary`, `.text-link.is-unobtrusive`, `.product-list--entry.is-sold-out`, `.button.primary.is-disabled`,
+* `.navigation.has-submenu`, `.button.has-addon`
 
 #### Eigenschaften des Namens
 
 * beschreibt einen Zustand oder besonderes Verhalten einer Komponenteninstanz, wodurch eine Variante entsteht
-* ist idealerweise ein einfaches Adjektiv mit dem Prefix `is-` oder `has-`
+* wenn sich der Modifier auf den Zustand oder das Verhalten einer Komponenteninstanz bezieht, benutzt man das `is`-Prefix und ein einfaches Adjektiv
+* falls eine Komponenteninstanz sich auf einen Bestandteil der Komponenteninstanz bezieht, benutzt man das `has`-Prefix und ein einfaches Nomen
 * die Prefixe werden benötigt, damit ein Modifier einfach identifiziert werden kann und Zustände abgebildet werden können, für die Adjektive nicht ausreichend sind
 * steht nie alleine, sondern ist nur in Verbindung mit der Komponente eindeutig ([Warum?](https://github.com/zweitag/html-css-guidelines/pull/2#discussion_r123475470))
 
